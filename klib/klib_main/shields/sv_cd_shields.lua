@@ -1,11 +1,11 @@
 ///////For bubble_Shields 2 ////////////////
 
 
-function Klib:AddShieldCoolDown(pl, time)
+function Klib:AddShieldCoolDown(pl, time_)
     pl.shieldcd = true
 
-    timer.Create("shield_cd" .. pl:Nick() .. "", time, 1, function()
-        pl.shieldcd = false
+    timer.Create("shield_cd" .. pl:Nick() .. "", time_, 1, function()
+    pl.shieldcd = false
     end)
 end
 
@@ -21,5 +21,9 @@ function Klib:HasShieldCD(pl)
     else
         return false
     end
+end
+
+function Klib:ShieldCDNotify(pl)
+    pl:ChatPrint("You have shield cooldown for "..Klib:GetShieldCd(pl).."(s)")
 end
 
