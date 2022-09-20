@@ -4,21 +4,21 @@ local function AddFile(File, dir)
 
     if SERVER and fileSide == "sv_" then
         include(dir..File)
-        print("[AUTOLOAD] SV INCLUDE: " .. File)
+        print("[KLIB] SV INCLUDE: " .. File)
     elseif fileSide == "sh_" then
         if SERVER then 
             AddCSLuaFile(dir..File)
-            print("[AUTOLOAD] SH ADDCS: " .. File)
+            print("[KLIB] SH ADDCS: " .. File)
         end
         include(dir..File)
-        print("[AUTOLOAD] SH INCLUDE: " .. File)
+        print("[KLIB] SH INCLUDE: " .. File)
     elseif fileSide == "cl_" then
         if SERVER then 
             AddCSLuaFile(dir..File)
-            print("[AUTOLOAD] CL ADDCS: " .. File)
+            print("[KLIB] CL ADDCS: " .. File)
         elseif CLIENT then
             include(dir..File)
-            print("[AUTOLOAD] CL INCLUDE: " .. File)
+            print("[KLIB] CL INCLUDE: " .. File)
         end
     end
 end
@@ -34,7 +34,7 @@ local function IncludeDir(dir)
     end
     
     for k, v in ipairs(Directory) do
-        print("[AUTOLOAD] Directory: " .. v)
+        print("[KLIB] Directory: " .. v)
         IncludeDir(dir..v)
     end
 
