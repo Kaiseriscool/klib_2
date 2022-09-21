@@ -24,6 +24,7 @@ function Klib:HasShieldCD(pl)
 end
 
 function Klib:ShieldCDNotify(pl)
+    if !Klib:HasShieldCD(pl) then pl:ChatPrint("ERROR:Doesnt Have Cooldown Ending Function") return end
     pl:ChatPrint("You have shield cooldown for "..Klib:GetShieldCd(pl).."(s)")
 end
 
