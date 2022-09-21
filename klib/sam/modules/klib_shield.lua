@@ -17,7 +17,7 @@ command.new( "removecooldown" )
 		end
 		if sam.is_command_silent then return end
 		sam.player.send_message(nil, "{A} Removed {T} Sheild Cooldown", {
-			A = ply, T = targets,
+			A = ply, T = targets
 		})
 	end)
 :End()
