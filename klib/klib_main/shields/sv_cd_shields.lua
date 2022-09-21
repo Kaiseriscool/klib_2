@@ -29,9 +29,12 @@ function Klib:ShieldCDNotify(pl)
 end
 
 
-//
+//SAM//
+
 function pMeta:RemoveShieldCD()
     timer.Remove("shield_cd" .. self:Nick() .. "")
     self.shieldcd = false
 end
+
+//SAM//
 

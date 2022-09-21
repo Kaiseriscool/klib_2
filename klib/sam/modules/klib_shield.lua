@@ -4,7 +4,7 @@ local sam, command, language = sam, sam.command, sam.language
 command.set_category( "Shields" )
 
 /*
-	Set Player Shield(s)
+	Remove Player Shield Cooldown
 */
 command.new( "removecooldown" )
 	:SetPermission( "removecooldown", "admin" )
