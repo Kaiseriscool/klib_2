@@ -28,3 +28,10 @@ function Klib:ShieldCDNotify(pl)
     pl:ChatPrint("You have shield cooldown for "..Klib:GetShieldCd(pl).."(s)")
 end
 
+
+//
+function pMeta:RemoveShieldCD()
+    timer.Remove("shield_cd" .. self:Nick() .. "")
+    self.shieldcd = false
+end
+
