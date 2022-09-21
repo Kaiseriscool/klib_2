@@ -16,7 +16,7 @@ function Klib:GetShieldCd(pl)
 end
 
 function Klib:HasShieldCD(pl)
-    if timer.Exists("shield_cd" .. pl:Nick() .. "") then
+    if timer.Exists("shield_cd" .. pl:Nick() .. "") and pl.shieldcd then
         return true
     else
         return false
